@@ -1,0 +1,25 @@
+######## O programa plink utiliza 3 arquivos principais, "bed", "bim" e "fam", com o mesmo sufixo 
+
+###.bed: arquivo binário que não pode ser vizualizado, com informações de variantes e indivíduos 
+
+###.bim: arquivos de variantes
+##estrutura:
+
+#Possui 6 colunas, sendo elas:
+1. Código de cromossomo (um número inteiro ou 'X'/'Y'/'XY'/'MT'; '0' indica desconhecido) ou nome
+2. Identificador da variante: podendo ser o "rsID" ou outro, como "cromossomo:posição:alelo1:alelo2"
+3. Posição em morgans ou centimorgans (é seguro usar valor fictício de '0')
+4. Coordenada do par de bases (base 1; limitada a 231-2)
+5. Alelo 1 (correspondente a bits claros em .bed; geralmente menor)
+6. Alelo 2 (correspondente a bits definidos em .bed; geralmente maior)
+
+###.fam: arquivos de indivíduos
+##estrutura:
+1. ID da família ('FID')
+2. ID dentro da família ('IID'; não pode ser '0')
+3. ID dentro da família do pai ('0' se o pai não estiver no conjunto de dados)
+4. ID da mãe dentro da família ('0' se a mãe não estiver no conjunto de dados)
+5. Código de sexo ('1' = masculino, '2' = feminino, '0' = desconhecido)
+6. Valor do fenótipo ('1' = controle, '2' = caso, '-9'/'0'/não numérico = dados ausentes se caso/controle)
+
+####### essas e outras informações disponíveis em: https://www.cog-genomics.org/plink/1.9/formats
