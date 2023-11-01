@@ -1,0 +1,26 @@
+############O arquivo vcf é o formato de arquivo que mais trabalhamos para variantes genômicas 
+##########VCF = Variants Call Format:
+###Dados de chamada de variantes obtidos a partir de sequenciamento de DNA, indentifica SNPs, inserções, deleções e outras variações genéticas.
+
+
+###Formato do arquivo:
+  ## Primeiras linhas com "#" sendo comentários com informações importantes como genoma de referência utilizado, informações da amostra, controle de qualidade utilizados, entre outros 
+  ##Columns:
+  #1("CHR"): cromossomo que a variante está localizado
+  #2("POS"): posição da variante
+  #3("ID"): identificador da variante, podendo ser "rsID" ou outro identificador como "chr:pos:alelo1:alelo2"
+  #4("REF"): alelo referência
+  #5("ALT"): alelo alternativo
+  #6("QUAL"): informações de qualidade
+  #7("FILTER"): se a variante passou nos filtros realizados, normalmente indicado com "PASS"
+  #8("INFO"): informações adicionais de siglas ou identificadores presentes no arquivo
+  #9("FORMAT"): formato em que a variante está representada, como por exemplo "GT"
+  #10-x (IDS samples): Identificadores dos indivíduos
+
+### O arquivo vcf pode ser convertido em outros arquivos, como arquivos plink, com o seguinte comando:
+
+plink --bfile variantefile.vcf --make-bed --out arquivos
+
+###com isso, os arquivos são convertidos para os formatos .bed, .bim e .fam
+
+ 
